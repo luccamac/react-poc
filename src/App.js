@@ -28,14 +28,12 @@ class App extends Component {
     event.preventDefault();
     axios.post('http://localhost:8001/cars', car)
     .then(response => { 
-      console.log(JSON.stringify(response)); this.setState({ successMessage: 'Success!'})}, 
+      console.log(
+        JSON.stringify(response)); this.setState({'value':''});
+        this.setState({ successMessage: 'Success!'})}, 
       error => { console.log(error);  this.setState({ successMessage: 'Failed to Submit :('})});
   }
 
-  clearForm(){
-    this.setState({ value: ''});
-    this.render();
-  }
 
   render() {
     return (
