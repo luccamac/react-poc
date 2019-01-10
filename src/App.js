@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import Input from '@material-ui/core/Input';
+import FormControl from '@material-ui/core/FormControl';
 import axios from 'axios';
 import './App.css';
 
 class App extends Component {
-
 
   constructor(props) {
     super(props);
@@ -26,7 +26,7 @@ class App extends Component {
   handleSubmit(event) {
     var car = { "name": this.state.value };
     event.preventDefault();
-    axios.post('http://localhost:3000/cars', car)
+    axios.post('http://localhost:8001/cars', car)
     .then(response => { 
       console.log(JSON.stringify(response)); this.setState({ successMessage: 'Success!'})}, 
       error => { console.log(error);  this.setState({ successMessage: 'Failed to Submit :('})});
@@ -39,13 +39,24 @@ class App extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} bssize="lg">
+      <FormControl>
       <h1>Garage</h1>
-      <p id="carLabel">Your Car Name:</p>
+      <p>Your Car Name:</p>
       <p>{this.state.successMessage}</p>
-      <Input type="text" id="nameInput" defaultValue={this.state.value} onChange={this.handleChange} />
+      <TextField
+        id="standard-full-width"
+        label="Input"
+        style={{ "marginLeft": "10%", "marginRight": "10%", "width": "80%" }}
+        value={this.state.value}
+        onChange={this.handleChange}
+        placeholder="Insert your car name here"
+        fullWidth
+        margin="normal"
+        InputLabelProps={{ shrink: true }}/>
       <input type="submit" id="submit" value="Submit" />
-      <Button variant="contained" id="carsListButton" href="/cars-list">Go to Cars List!</Button>
+      <Button variant="contained" id="carsListButton" color="secondary" href="/cars-list">Cars List</Button>
+      </FormControl>
       </form>
     );
   }
