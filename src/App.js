@@ -26,7 +26,7 @@ class App extends Component {
   handleSubmit(event) {
     var car = { "name": this.state.value };
     event.preventDefault();
-    axios.post('http://localhost:8001/cars', car)
+    axios.post('http://localhost:3000/cars', car)
     .then(response => { 
       console.log(
         JSON.stringify(response)); this.setState({'value':''});

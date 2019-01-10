@@ -14,7 +14,7 @@ class CarsTable extends Component {
     }
 
     getCars() {
-        axios.get('http://localhost:8001/cars')
+        axios.get('http://localhost:3000/cars')
         .then(res => {
             const cars = res.data;
             console.log(cars);
@@ -23,7 +23,7 @@ class CarsTable extends Component {
     }
 
     onClickRow(item, e) {
-        axios.delete('http://localhost:8001/cars/' + e.id)
+        axios.delete('http://localhost:3000/cars/' + e.id)
         .then(this.getCars)
         .then(window.location.reload());
     }
