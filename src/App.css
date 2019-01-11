@@ -26,6 +26,13 @@ input {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 1%;
+}
+
+#exportToCsv {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 5%;
 }
 

@@ -1,0 +1,9 @@
+applications:
+- name: react-poc
+  disk_quota: 1G
+  health-check-type: process
+  instances: 1
+  memory: 2G
+  routes:
+  - route: react-poc.ausvdc02.pcf.dell.com
+  stack: cflinuxfs2

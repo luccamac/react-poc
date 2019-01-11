@@ -31,6 +31,7 @@ class CarsTable extends Component {
     render() {
         return (
             <div>
+            <p>Click to delete.</p>
             <JsonTable className="table table-striped" rows={this.state.carsList} 
             columns={['id', 'name']} onClickRow={this.onClickRow} />
             </div>
