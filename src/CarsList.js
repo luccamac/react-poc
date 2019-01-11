@@ -3,7 +3,6 @@ import Button from '@material-ui/core/Button';
 import './App.css';
 import CarsTable from './CarsTable';
 import axios from 'axios';
-import fs from 'fs';
 
 class CarsList extends Component {
 
